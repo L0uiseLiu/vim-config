@@ -1,0 +1,6 @@
+plugged/
+bundle/
+pack/
+*.swp
+*.un~
+.netrwhist
