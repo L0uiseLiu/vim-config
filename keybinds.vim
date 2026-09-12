@@ -1,5 +1,5 @@
 let mapleader = " "
-nnoremap <leader>cd :Ex<CR>
+source ~/.vim/netrw.vim
 inoremap jk <Esc>
 inoremap kj <Esc>
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
