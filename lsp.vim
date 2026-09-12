@@ -3,11 +3,30 @@ let lspOpts = #{autoHighlightDiags: v:true}
 autocmd User LspSetup call LspOptionsSet(lspOpts)
 
 let lspServers = [
-    \ #{
-    \   name: 'solargraph',
+    \#{
+    \   name: 'ruby-lsp',
     \   filetype: ['ruby'],
-    \   path: 'solargraph',
-    \   args: ['stdio']
+    \   path: 'bundle',          
+    \   args: ['exec', 'ruby-lsp'], 
+    \   root_markers: ['Gemfile', '.git'], 
+    \   config: {
+    \     'init_options': {
+    \       'formatter': 'standard',
+    \       'linters': ['standard'],
+    \       'addonSettings': {
+    \         'Ruby LSP Rails': {
+    \           'enablePendingMigrationsPrompt': v:false
+    \         }
+    \       }
+    \     }
+    \   }
+    \ },
+    \ #{
+    \   name: 'marksman',
+    \   filetype: ['markdown'],
+    \   path: 'marksman',
+    \   args: ['server'],
+    \   syncInit: v:true
     \ },
     \  #{
     \   name: 'typescript-language-server',
